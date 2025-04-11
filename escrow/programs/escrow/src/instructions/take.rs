@@ -6,7 +6,7 @@ use crate::state::Escrow;
 
 #[derive(Accounts)]
 
-pub struct Take <'info> {
+pub struct  Take <'info> {
     
     #[account(mut)]
     pub taker: Signer <'info>,

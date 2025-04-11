@@ -55,7 +55,7 @@ pub struct Make <'info> {
     pub vault: InterfaceAccount<'info, TokenAccount>,
 
     pub token_program: Interface <'info, TokenInterface>,
-    pub associated_token: Program<'info, AssociatedToken>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>
 
 
@@ -80,8 +80,24 @@ impl <'info> Make <'info> {
         
     }
 
-    pub fn deposit (&mut self, amount:u64)-> Result<()>{
+    pub fn deposit (&mut self, amount: u64)-> Result<()> {
 
-    }
-    
+        let cpi_program = self.token_program.to_account_info();
+        let transfer_accounts = TransferChecked{
+            from:self.maker_ata_a.to_account_info(),
+            mint:self.mint_a.to_account_info(),
+            to:self.vault.to_account_info(),
+            authority:self.maker.to_account_info(), 
+};
+
+  let cpi_ctx = CpiContext::new(cpi_program, transfer_accounts);
+
+  transfer_checked(cpi_ctx, amount , self.mint_a.decimals)?;
+  Ok(())
+
 }
+
+    
+     }
+    
+

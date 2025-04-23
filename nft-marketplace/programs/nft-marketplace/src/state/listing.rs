@@ -7,4 +7,5 @@ pub struct Listing{
     pub nft_mint: Pubkey,
     pub price: u64,
     pub bump:u8,
+    
 }

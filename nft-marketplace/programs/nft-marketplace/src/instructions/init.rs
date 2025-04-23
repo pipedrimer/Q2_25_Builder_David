@@ -4,9 +4,9 @@ use anchor_spl::token_interface::{Mint, TokenInterface};
 use crate::state::Marketplace;
 
 
-#[Accounts]
-#[Instruction(name:String)]
-pub struct Initialize{
+#[derive(Accounts)]
+#[instruction(name:String)]
+pub struct Initialize<'info>{
 
     #[account(mut)]
     pub admin: Signer<'info>,
@@ -25,6 +25,7 @@ pub struct Initialize{
         bump
 
     )]
+    pub treasury: SystemAccount<'info>,
   
     #[account(
         init,
@@ -36,7 +37,6 @@ pub struct Initialize{
 
     )]
     pub reward_mint: InterfaceAccount<'info, Mint>,
-    pub metadata_program: Program<'info, Metadata>,
     pub token_program : Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>
 
@@ -51,8 +51,8 @@ impl <'info> Initialize <'info> {
                 admin: self.admin.key(),
                 name,
                 fee,
-                rewards_bump:bump.reward_mint,
-                tresury_bump:bumps.treasury,
+                rewards_bump:bumps.reward_mint,
+                treasury_bump:bumps.treasury,
                 bump:bumps.marketplace,
               }
           );

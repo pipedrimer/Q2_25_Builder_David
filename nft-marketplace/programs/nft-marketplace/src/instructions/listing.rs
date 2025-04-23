@@ -32,18 +32,15 @@ pub struct List<'info> {
 
     #[account(init,
     payer= maker,
-    associated_token::authority= listing,
     associated_token::mint= maker_mint,
-    associated_token::token_program = token_program
-    
-
-)]
+    associated_token::authority= listing,
+    associated_token::token_program = token_program)]
     pub vault: InterfaceAccount<'info, TokenAccount>,
     
     #[account(init,
-    payer:maker,
-    space= 8+ Listing::INIT_SPACE,
-    seeds= [b"listing", maker_mint.key().as_ref()],
+    payer=maker,
+    space= 8 + Listing::INIT_SPACE,
+    seeds= [b"listing", maker_mint.key().as_ref(), marketplace.key().as_ref(), maker.key().as_ref()],
     bump,
 
 )]
@@ -56,8 +53,8 @@ pub struct List<'info> {
         bump,
 
         seeds::program= metadata_program.key(),
-        constraint= metadata.collection.as_ref().unwrap().key.as_ref() ==collection_mint.key().as_ref(),
-        constraint= metadata.collection.as.ref().unwrap().verified == true,
+        constraint= metadata.collection.as_ref().unwrap().key.as_ref() ==collection_mint.key().as_ref() @MarketplaceError::InvalidCollection,
+        constraint= metadata.collection.as_ref().unwrap().verified == true @MarketplaceError::UnverifedCollection,
 
     )]
     pub metadata: Account<'info, MetadataAccount>,
@@ -76,15 +73,15 @@ pub struct List<'info> {
 
     pub metadata_program: Program<'info, Metadata>,
     pub token_program : Interface<'info, TokenInterface>,
-    pub associated_token: Program<'info, AssociatedToken>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
     
 
 }
 
-impl <'info> Listing <'info> {
+impl <'info> List <'info> {
 
-    pub fn create_listing(&mut self,price: u64 ,bumps:&ListBumps) -> Result<()>{
+    pub fn create_listing(&mut self, price: u64 , bumps:&ListBumps) -> Result<()>{
         
        self.listing.set_inner({
         Listing{
@@ -110,7 +107,7 @@ impl <'info> Listing <'info> {
 
         };
 
-       let  cpi_ctx= CpiContext::new(cpi_accounts, cpi_program);
+       let  cpi_ctx= CpiContext::new(cpi_program, cpi_accounts );
 
        transfer_checked(cpi_ctx, 1, 0)?;
        Ok(())

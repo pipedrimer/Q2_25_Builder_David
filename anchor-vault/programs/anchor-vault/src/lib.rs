@@ -1,3 +1,4 @@
+
 use anchor_lang::prelude::*;
 use anchor_lang::system_program::{Transfer, transfer};
 
@@ -114,7 +115,7 @@ pub struct Close <'info> {
     
 }
 
-impl <'info>  Close <'info>{
+impl <'info> Close <'info>{
     pub fn close(&mut self) -> Result<()>{
 
         let cpi_program= self.system_program.to_account_info();
@@ -139,4 +140,3 @@ pub struct VaultState {
     pub state_bump: u8,
 }
 
-//fn

@@ -1,0 +1,52 @@
+Streaming transaction logs mentioning FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K. Confirmed commitment
+Transaction executed in slot 8:
+  Signature: X9njY9UaYhyzhZY7vYKgL2jmugiobf6JWAdPdJfQkFE8JZa3ZTF2fgbeUTcsimMp5sgvysZzRBc6TWAurLmXRYC
+  Status: Ok
+  Log Messages:
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K invoke [1]
+    Program log: Instruction: Make
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [2]
+    Program log: Create
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+    Program log: Instruction: GetAccountDataSize
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1595 of 175562 compute units
+    Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program 11111111111111111111111111111111 invoke [3]
+    Program 11111111111111111111111111111111 success
+    Program log: Initialize the associated token account
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+    Program log: Instruction: InitializeImmutableOwner
+    Program log: Please upgrade to SPL Token 2022 for immutable owner support
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 168949 compute units
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]
+    Program log: Instruction: InitializeAccount3
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4214 of 165065 compute units
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 20490 of 181037 compute units
+    Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+    Program log: Instruction: TransferChecked
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6174 of 154956 compute units
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K consumed 52034 of 200000 compute units
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K success
+Transaction executed in slot 9:
+  Signature: 2Mkfos9FaKuRzbRYCaay7P8pm17TrLmENTCRXxawpC2xqPJRhjzk53UjPnQMzDNba4VUZ1CSmTg7SYKtApZTEcAq
+  Status: Ok
+  Log Messages:
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K invoke [1]
+    Program log: Instruction: Refund
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+    Program log: Instruction: TransferChecked
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6174 of 187527 compute units
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+    Program log: Instruction: CloseAccount
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 3015 of 179126 compute units
+    Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K consumed 24471 of 200000 compute units
+    Program FsLwwctiKpnAgaCi9tKh3oXhmYZ8CPY7GY21XcKMdo2K success

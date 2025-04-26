@@ -92,7 +92,7 @@ impl <'info> Take <'info> {
 
      let ctx_cpi = CpiContext::new(cpi_program, cpi_accounts);
 
-         transfer_checked(ctx_cpi, self.escrow.recieve, self.mint_b.decimals);
+         transfer_checked(ctx_cpi, self.escrow.recieve, self.mint_b.decimals)?;
 
          Ok(())
     }
@@ -111,14 +111,14 @@ impl <'info> Take <'info> {
 
          let seed_bytes = self.escrow.seed.to_le_bytes();
 
-         let seeds= &[b"escrow", self.escrow.maker.as_ref(), seed_bytes.as_ref(), &[self.escrow.bump]];
+         let seeds= &[b"escrow", self.maker.to_account_info().key.as_ref(), seed_bytes.as_ref(), &[self.escrow.bump]];
 
          let signer_seeds = &[&seeds[..]];
         
 
         let ctx_cpi = CpiContext::new_with_signer(program, accounts, signer_seeds);
 
-        transfer_checked(ctx_cpi, self.escrow.recieve, self.mint_a.decimals);
+        transfer_checked(ctx_cpi, self.escrow.recieve, self.mint_a.decimals)?;
 
         Ok(())
 
@@ -137,13 +137,13 @@ impl <'info> Take <'info> {
 
             let seed_bytes = self.escrow.seed.to_le_bytes();
 
-            let seeds=  &[b"escrow", self.escrow.maker.as_ref(), seed_bytes.as_ref(), &[self.escrow.bump]];
+            let seeds=  &[b"escrow", self.maker.to_account_info().key.as_ref(), seed_bytes.as_ref(), &[self.escrow.bump]];
 
             let signer_seeds = &[&seeds[..]];
 
             let ctx_cpi = CpiContext::new_with_signer(cpi_program, cpi_accounts, signer_seeds);
 
-            close_account(ctx_cpi);
+            close_account(ctx_cpi)?;
 
             Ok(())
         }

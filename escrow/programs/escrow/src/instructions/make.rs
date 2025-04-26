@@ -1,7 +1,4 @@
 use anchor_lang::prelude::*;
-
-// use mod make::*;
-
 use anchor_spl::{associated_token::AssociatedToken, token_interface::{transfer_checked, Mint, TransferChecked, TokenAccount, TokenInterface},
 
 };
@@ -92,7 +89,7 @@ impl <'info> Make <'info> {
 
   let cpi_ctx = CpiContext::new(cpi_program, transfer_accounts);
 
-  transfer_checked(cpi_ctx, amount , self.mint_a.decimals)?;
+  transfer_checked(cpi_ctx, amount , self.mint_a.decimals);
   Ok(())
 
 }

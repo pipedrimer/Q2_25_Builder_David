@@ -5,7 +5,7 @@ use anchor_lang::system_program::{Transfer, transfer};
 declare_id!("GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa");
 
 #[program]
-pub mod vault_anchor {
+pub mod Vault {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {

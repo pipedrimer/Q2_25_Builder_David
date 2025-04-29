@@ -1,18 +1,18 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Keypair, LAMPORTS_PER_SOL, PublicKey, SystemProgram } from "@solana/web3.js";
-import { AnchorVault } from "../target/types/vault_anchor";
+import { VaultAnchor } from "../target/types/vault_anchor";
 import { BN } from "bn.js";
 
-describe("anchor-vault", () => {
-  // Configure the client to use the local cluster.
+describe("vault-anchor", () => {
+ 
   anchor.setProvider(anchor.AnchorProvider.env()); 
   
-  const provider= anchor.getProvider()
-  const connection= provider.connection;
+  const provider = anchor.getProvider()
+  const connection = provider.connection;
   
 
-  const program = anchor.workspace.anchorVault as Program<AnchorVault>;
+  const program = anchor.workspace.anchorVault as Program<VaultAnchor>;
   const programId = program.programId;
   
 
@@ -64,6 +64,27 @@ describe("anchor-vault", () => {
 
     await program.methods
     .deposit(new BN(1e9))
+    .accounts({...accounts})
+    .signers([maker])
+    .rpc()
+    .then(confirm)
+    .then(log)
+  });
+
+  it("Withdraw", async () =>{
+
+    await program.methods
+    .withdraw(new BN(1e3))
+    .accounts({...accounts})
+    .signers([maker])
+    .rpc()
+    .then(confirm)
+    .then(log)
+  });
+
+  it ("Close", async ()=>{
+    await program.methods
+    .close()
     .accounts({...accounts})
     .signers([maker])
     .rpc()

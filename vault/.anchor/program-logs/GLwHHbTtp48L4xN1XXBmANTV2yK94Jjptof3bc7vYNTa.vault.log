@@ -1,0 +1,41 @@
+Streaming transaction logs mentioning GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa. Confirmed commitment
+Transaction executed in slot 7:
+  Signature: 5zSqYHVTPaVEDxjCekAQoLQqRBaeshbMQqChCDuQ5x4upm8jBs8AeNHQSsQePUXTe6Xe8sxE2EF8fTVBHvR4kivK
+  Status: Ok
+  Log Messages:
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa invoke [1]
+    Program log: Instruction: Initialize
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa consumed 8724 of 200000 compute units
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa success
+Transaction executed in slot 8:
+  Signature: 4YczRzGRbXgJuo7uTCKLKW1E8K6wyPoe1BW3QA4N2E93UucaeJ97jJCNFxqww5vLZYBV9FPBfr3fGKCyfvvCJhWP
+  Status: Ok
+  Log Messages:
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa invoke [1]
+    Program log: Instruction: Deposit
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa consumed 7132 of 200000 compute units
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa success
+Transaction executed in slot 9:
+  Signature: gHKdBsxQtN16fE8t999NmWsBtLiU3VWqE56tgDWNdScoV8V4H3r319GcjxXeLvMonSL4kBHkgH31inYW8k5bHmY
+  Status: Ok
+  Log Messages:
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa invoke [1]
+    Program log: Instruction: Withdraw
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa consumed 7188 of 200000 compute units
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa success
+Transaction executed in slot 10:
+  Signature: 3VLA8fNcTvbsqC9f47N6EJRJGpaxuTWjSWVHjQ1vGxdF2yjZSrgzPBFLEzTnuA33bJ4gjGyT88NEn34b4gXzUNwQ
+  Status: Ok
+  Log Messages:
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa invoke [1]
+    Program log: Instruction: Close
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa consumed 7204 of 200000 compute units
+    Program GLwHHbTtp48L4xN1XXBmANTV2yK94Jjptof3bc7vYNTa success

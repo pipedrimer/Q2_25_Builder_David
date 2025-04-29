@@ -1,7 +1,7 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program, BN} from "@coral-xyz/anchor";
 import { Escrow } from "../target/types/escrow";
-import { MINT_SIZE,TOKEN_2022_PROGRAM_ID,TOKEN_PROGRAM_ID,createAssociatedTokenAccountIdempotentInstruction, createInitializeMint2Instruction, createMintToInstruction, getAssociatedTokenAddressSync, getMinimumBalanceForRentExemptMint } from "@solana/spl-token";
+import { MINT_SIZE,TOKEN_PROGRAM_ID,createAssociatedTokenAccountIdempotentInstruction, createInitializeMint2Instruction, createMintToInstruction, getAssociatedTokenAddressSync, getMinimumBalanceForRentExemptMint } from "@solana/spl-token";
 import {randomBytes} from "crypto";
 import { Transaction, Keypair, LAMPORTS_PER_SOL,PublicKey,SystemProgram} from "@solana/web3.js";
 

@@ -1,6 +1,6 @@
-use anchor_lang::prelude::*;
+use anchor_lang::{prelude::*, system_program::{Transfer, transfer}};
 use anchor_spl::{associated_token::AssociatedToken,
-    token::{close_account, transfer, transfer_checked, CloseAccount, Transfer, TransferChecked},
+    token::{close_account, transfer_checked, CloseAccount, TransferChecked},
     token_interface::{Mint, TokenAccount, TokenInterface},
 };
 
@@ -75,12 +75,11 @@ impl <'info> Take <'info>{
     let cpi_accounts=  Transfer{
         from:self.taker.to_account_info(),
         to:self.maker.to_account_info(),
-        authority:self.taker.to_account_info()
     };
 
      let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts );
 
-     transfer(cpi_ctx, amount);
+     transfer(cpi_ctx, amount)?;
 
 
      let cpi_program = self.system_program.to_account_info();
@@ -88,11 +87,10 @@ impl <'info> Take <'info>{
      let cpi_accounts=  Transfer {
          from:self.taker.to_account_info(),
          to:self.treasury.to_account_info(),
-         authority:self.taker.to_account_info(),
      };
 
      let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts );
-     transfer(cpi_ctx, fee);
+     transfer(cpi_ctx, fee)?;
 
      Ok(())
 

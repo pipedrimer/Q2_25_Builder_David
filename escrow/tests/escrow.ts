@@ -34,7 +34,7 @@ describe("Escrow", () => {
     return signature;
   }
 
-  const seed= new BN(randomBytes(8));
+  const seed = new BN(randomBytes(8));
 
  const [maker, taker, mintA, mintB] = Array.from({length:4}, () => Keypair.generate());
 
@@ -58,6 +58,7 @@ describe("Escrow", () => {
   vault,
   tokenProgram,
 }
+
 
 it("Airdrop and create mints", async () => {
     let lamports = await getMinimumBalanceForRentExemptMint(connection);

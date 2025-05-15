@@ -1,0 +1,3 @@
+[submodule "QuickSwap"]
+	path = QuickSwap
+	url = https://github.com/pipedrimer/QuickSwap
